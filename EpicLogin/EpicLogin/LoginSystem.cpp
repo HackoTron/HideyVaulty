@@ -90,7 +90,7 @@ void showOptions() {
 	case 4: 
 		std::cout << "Quitting program ..." << std::endl;
 		Sleep(1000);
-		system("taskkill /f /im BatchGenie.exe >nul");
+		system("taskkill /f /im EpicLogin.exe >nul");
 		system("cls");
 	
 
@@ -142,7 +142,7 @@ void showOptionsAuth(std::string name) {
 		case 3: 
 			std::cout << "Quitting program ..." << std::endl;
 			Sleep(1000);
-			system("taskkill /f /im Password.exe >nul");
+			system("taskkill /f /im EpicLogin.exe >nul");
 			system("cls");
 		
 		default: 

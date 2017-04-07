@@ -139,13 +139,13 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\..\Desktop\NewAccount.h" />
+    <ClInclude Include="NewAccount.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\..\Desktop\LoginSystem.cpp" />
-    <ClCompile Include="..\..\..\..\C++ Workspace\Password\src\EpicLogon.cpp" />
+    <ClCompile Include="EpicLogon.cpp" />
+    <ClCompile Include="LoginSystem.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
