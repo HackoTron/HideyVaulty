@@ -1,8 +1,8 @@
 /*
-* NewAccount.cpp
+* LoginSystem.cpp
 *
 *  Created on: 26/03/2017
-*      Author: JackEliteBook
+*      Author: HackoTron
 */
 #include "stdafx.h"
 #include "targetver.h"
@@ -18,36 +18,32 @@ using std::ofstream;
 
 int main();
 bool wantLogon;
-std::string username;
-std::string password;
-NewAccount account1;
-int option;
-ifstream credentialFileRead;
-ofstream credentialFileWrite;
-std::string user;
-std::string pass;
+
+std::string username; //String variable in which inputted username is stored
+
+std::string password; //String variable in which inputted password is stored
+
+NewAccount account1; //NewAccount object "account1"
+
+int option; //Integer variable in which the inputted option is stored (used in functions showOptions() and showOptionsAuth()) 
+
+ifstream credentialFileRead; //Object that allows credential files to be read from
+
+ofstream credentialFileWrite; //Object that allow credential files to be written to
+
+std::string user; //String variable where the output from credentialFileRead is stored (used in usernameSystem)
+
+std::string pass; //String variable where the output from credentialFileRead is stored (used in usernameSystem)
 
 NewAccount::NewAccount() {
 	username = "user";
 	password = "user";
 }
 
-std::string NewAccount::getUsername() {
-	return username;
-}
-
-std::string NewAccount::getPassword() {
-	return password;
-}
-
-void NewAccount::setCredentials(std::string inputUsername, std::string inputPassword) {
-	username = inputUsername;
-	password = inputPassword;
-
-}
-
 bool authenticated;
 
+
+//Shows the login options
 void showOptions() {
 
 	std::cout << "Welcome to EpicLogin" << std::endl;
@@ -61,28 +57,31 @@ void showOptions() {
 
 	int option;
 	std::cin >> option;
-	
+
+	//Options listed in function "showOptions"
 	switch (option) {
 	case 1:
+		//Sets username to user input, and stores it in a file
 		credentialFileWrite.open("username.txt");
 		std::cout << "What would you like your username to be? > " << std::flush;
 		std::cin >> username;
 		credentialFileWrite << username;
 		credentialFileWrite.close();
 
+		//Sets password to user input, and stores in in a file
 		credentialFileWrite.open("password.txt");
 		std::cout << "What would you like your password to be? > " << std::flush;
 		std::cin >> password;
 		credentialFileWrite << password;
 		credentialFileWrite.close();
 
-		account1.setCredentials(username, password);
 		wantLogon = true;
 		Sleep(1000);
 		system("cls");
 		break;
 
 	case 2:
+		//Loading text for login dialog
 		std::cout << "Login service initializing ..." << std::endl;
 		wantLogon = true;
 		Sleep(1000);
@@ -91,6 +90,7 @@ void showOptions() {
 
 
 	case 3:
+		//Text outputted when user selects the "About" option (temporary)
 		std::cout << "Sorry, service not available\n" << std::endl;
 		Sleep(1000);
 		system("cls");
@@ -98,6 +98,7 @@ void showOptions() {
 		break;
 
 	case 4:
+		//Code for quitting program
 		std::cout << "Quitting program ..." << std::endl;
 		Sleep(1000);
 		system("taskkill /f /im EpicLogin.exe >nul");
@@ -105,10 +106,11 @@ void showOptions() {
 
 
 	default:
+		//Code run if option is invalid
 		std::cout << '"' << option << '"' << " is not a valid option\n" << std::endl;
 		Sleep(1000);
 		system("cls");
-		main();
+		showOptions();
 	}
 
 	if (wantLogon == true) {
@@ -119,6 +121,7 @@ void showOptions() {
 	}
 }
 
+//Options for authenticated users
 void showOptionsAuth(std::string name) {
 	std::cout << "Hello " << name << ", Welcome to EpicLogin" << std::endl;
 
@@ -137,12 +140,14 @@ void showOptionsAuth(std::string name) {
 
 		switch (option) {
 		case 1:
+			//Text outputted when user selects the "About" option (temporary)
 			std::cout << "Sorry, service currently not available" << std::endl;
 			Sleep(1000);
 			system("cls");
 			break;
 
 		case 2:
+			//Loading text for logout dialog
 			std::cout << "Logging out ... " << std::endl;
 			authenticated = false;
 			Sleep(1000);
@@ -150,12 +155,14 @@ void showOptionsAuth(std::string name) {
 			break;
 
 		case 3:
+			//Code for quitting program
 			std::cout << "Quitting program ..." << std::endl;
 			Sleep(1000);
-			system("taskkill /f /im EpicLogin.exe >nul");
+			system("taskkill /f /im EpicLogin.exe");
 			system("cls");
 
 		default:
+			//Code run if option is invalid
 			std::cout << '"' << option << '"' << " is not a valid option\n" << std::endl;
 			Sleep(1000);
 			system("cls");
@@ -171,6 +178,7 @@ void showOptionsAuth(std::string name) {
 	}
 }
 
+//System for checking if password is correct
 void passwordSystem() {
 
 	std::string inputPassword;
@@ -205,6 +213,7 @@ void passwordSystem() {
 	showOptionsAuth(name);
 }
 
+//System for checking if username is correct
 void usernameSystem() {
 
 	std::string inputUsername;
