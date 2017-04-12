@@ -46,8 +46,8 @@ bool authenticated;
 //Shows the login options
 void showOptions() {
 
-	std::cout << "Welcome to EpicLogin" << std::endl;
-	std::cout << "====================" << std::endl;
+	std::cout << "Welcome to EpicLogin Alpha 0.3" << std::endl;
+	std::cout << "==============================" << std::endl;
 	std::cout << "1. Create an account" << std::endl;
 	std::cout << "2. Login" << std::endl;
 	std::cout << "3. About" << std::endl;
@@ -123,12 +123,12 @@ void showOptions() {
 
 //Options for authenticated users
 void showOptionsAuth(std::string name) {
-	std::cout << "Hello " << name << ", Welcome to EpicLogin" << std::endl;
+	std::cout << "Hello " << name << ", Welcome to EpicLogin Alpha 0.3" << std::endl;
 
 	for (unsigned int i = 0; i < name.length(); i++) {
 		std::cout << "=" << std::flush;
 
-		std::cout << "============================" << std::endl;
+		std::cout << "======================================" << std::endl;
 		std::cout << "1. About" << std::endl;
 		std::cout << "2. Logout" << std::endl;
 		std::cout << "3. Quit" << std::endl;
