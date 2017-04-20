@@ -4,13 +4,15 @@ to lock programs away from prying eyes. It can currently save credentials, but t
 file is located. Eventually, I will create a CMD based installer, to get everything in the right place.
 
 ## Prerequisites
-You will need:
+**You will need:**
 
 - A working Windows system
 - Visual Studio 2015 or later (if you want to compile the code manually)
 
-## Changelog
+## Getting started
+Since I haven't yet created an installer, I will leave this section blank.
 
+## Changelog
 **Alpha 0.1**
 - Initial release
 
@@ -27,4 +29,4 @@ You will need:
 - Heaps of bug fixes and performance improvements
 
 ## Author/s
-Jack Williams
+Jack Williams (HackoTron)
