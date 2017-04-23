@@ -27,11 +27,16 @@ void showSplash() {
 void showPrompt() {
 	std::cout << "HideyVaulty Shell > " << std::flush;
 	getline(std::cin, userInput);
+	if (userInput == "") std::cout << std::endl;
 }
 
 void commandValidityChecker() {
 	if (userInput == "help") {
 		helpOutput();
+		commandValidityChecker();
+	}
+	else if (userInput == "") {
+		showPrompt();
 		commandValidityChecker();
 	}
 	else if (userInput == "about") {
@@ -77,8 +82,8 @@ int main() {
 	std::cout << std::endl;
 
 	showPrompt();
-
 	commandValidityChecker();
+	
 
 	return 0;
 }

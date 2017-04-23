@@ -59,20 +59,18 @@ void createAccount() {
 	//Sets username to user input, and stores it in a file
 	credentialFileWrite.open("username.txt");
 	std::cout << "What would you like your username to be? > " << std::flush;
-	std::cin >> username;
+	getline(std::cin, username);
 	credentialFileWrite << username;
 	credentialFileWrite.close();
 
 	//Sets password to user input, and stores in in a file
 	credentialFileWrite.open("password.txt");
 	std::cout << "What would you like your password to be? > " << std::flush;
-	std::cin >> password;
+	getline(std::cin, password);
 	credentialFileWrite << password;
 	credentialFileWrite.close();
-
-	std::cout << "\nFor security purposes, the program will restart" << std::endl;
-	Sleep(2000);
-	system("taskkill /f /im HideyVaulty.exe >nul && start HideyVaulty.exe");
+	
+	main();
 }
 
 void accountLogin() {

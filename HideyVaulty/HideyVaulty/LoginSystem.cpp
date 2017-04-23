@@ -46,7 +46,7 @@ void usernameSystem() {
 	std::string inputUsername;
 	do {
 		std::cout << "Enter your username > " << std::flush;
-		std::cin >> inputUsername;
+		getline(std::cin, inputUsername);
 
 		credentialFileRead.open("username.txt");
 		credentialFileRead >> user;
@@ -71,8 +71,7 @@ void passwordSystem() {
 	do {
 
 		std::cout << "Enter your password > " << std::flush;
-		std::cin >> inputPassword;
-		std::cin.ignore();
+		getline(std::cin, inputPassword);
 
 		credentialFileRead.open("password.txt");
 		credentialFileRead >> pass;
