@@ -8,8 +8,7 @@ HideyVaulty is an open-source file hiding program, designed for penetration test
 - Visual Studio 2015 or later (if you want to compile the code manually)
 
 ## Getting started
-Since I haven't yet created an installer, I will leave this section blank.
-
+For a list of commands type ```help```. (Note: For a full list of commands, use ```help``` when logged in).
 ## Changelog
 **Alpha 0.1**
 - Initial release
