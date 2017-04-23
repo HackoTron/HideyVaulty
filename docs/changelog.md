@@ -1,5 +1,5 @@
 ---
-theme: jekyl-slate
+theme: jekyl-theme-slate
 layout: page
 title: Changelog
 permalink: /changelog/
