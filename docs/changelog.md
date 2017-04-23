@@ -1,10 +1,3 @@
----
-theme: jekyl-theme-slate
-layout: page
-title: Changelog
-permalink: /changelog/
----
-
 ## Changelog
 **Alpha 0.1**
 - Initial release
