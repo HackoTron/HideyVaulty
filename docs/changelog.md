@@ -1,3 +1,8 @@
+---
+title: Changelog
+permalink: changelog.html
+---
+
 ## Changelog
 **Alpha 0.1**
 - Initial release
