@@ -1,5 +1,5 @@
 # HideyVaulty - Open-Source File-Hider
-HideyVaulty is an open-source file hiding program, designed for penetration testers. It is currently only available for use on Windows targets, but eventually this will expand to MacOS and Linux. It allows penetration testers to upload files to a target system, and keep them in a secure location, which can be managed from HideyVaulty, which uses a secure password protection system.
+HideyVaulty is an open-source file hiding program, designed for penetration testers. It is currently only available for use on Windows targets, but eventually this will expand to MacOS and Linux. It allows penetration testers to upload files to a target system, and keep them in a secure location managed directly from the HideyVaulty Shell, which uses a secure password protection system.
 
 ## Prerequisites
 **You will need:**
