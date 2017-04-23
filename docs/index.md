@@ -1,7 +1,5 @@
-# HideyVaulty
-HideyVaulty is an open-source login system for Windows. It is currently in early alpha, but eventually, you will be able to use it
-to lock programs away from prying eyes. It can currently save credentials, but they are not encrypted, and in the location where the .exe
-file is located. Eventually, I will create a CMD based installer, to get everything in the right place.
+# HideyVaulty - Open-Source Script-Hiding Program
+HideyVaulty is an open-source file hiding program, designed for penetration testers. It is currently only available for use on Windows targets, but eventually this will expand to MacOS and Linux. It allows penetration testers to upload files to a target system, and keep them in a secure location, which can be managed from HideyVaulty, which uses a secure password protection system.
 
 ## Prerequisites
 **You will need:**
@@ -23,7 +21,7 @@ Since I haven't yet created an installer, I will leave this section blank.
 - Minor tweaks
 
 **Alpha 0.4**
-- "EpicLogin" renamed to "HideyVault"
+- "EpicLogin" renamed to "HideyVaulty"
 - Totally redesigned CLI
 - Cool ASCII art
 - Heaps of bug fixes and performance improvements
