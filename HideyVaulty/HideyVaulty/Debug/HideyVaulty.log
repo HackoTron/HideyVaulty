@@ -1,4 +1,0 @@
-﻿  CommandSystem.cpp
-c:\users\jackelitebook\documents\github\hideyvaulty\hideyvaulty\hideyvaulty\commandsystem.cpp(68): warning C4805: '==': unsafe mix of type 'unsigned int' and type 'bool' in operation
-  HideyVaulty.vcxproj -> C:\Users\JackEliteBook\Documents\GitHub\HideyVaulty\HideyVaulty\HideyVaulty\Debug\HideyVaulty.exe
-  HideyVaulty.vcxproj -> C:\Users\JackEliteBook\Documents\GitHub\HideyVaulty\HideyVaulty\HideyVaulty\Debug\HideyVaulty.pdb (Partial PDB)
