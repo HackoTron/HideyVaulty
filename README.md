@@ -17,6 +17,7 @@ Since I haven't yet created an installer, I will leave this section blank.
 - Redesigned code structure
 - Better authentication system
 - A ton of bug fixes
+- 32-bit version!
 
 **Alpha 0.4**
 - "EpicLogin" renamed to "HideyVault"
