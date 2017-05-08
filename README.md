@@ -13,20 +13,27 @@ file is located. Eventually, I will create a CMD based installer, to get everyth
 Since I haven't yet created an installer, I will leave this section blank.
 
 ## Changelog
-**Alpha 0.1**
-- Initial release
-
-**Alpha 0.2**
-- Minor tweaks
-
-**Alpha 0.3**
-- Minor tweaks
+**Alpha 0.5**
+- Redesigned code structure
+- Better authentication system
+- A ton of bug fixes
 
 **Alpha 0.4**
 - "EpicLogin" renamed to "HideyVault"
 - Totally redesigned CLI
 - Cool ASCII art
 - Heaps of bug fixes and performance improvements
+
+**Alpha 0.3**
+- Minor tweaks
+
+**Alpha 0.2**
+- Minor tweaks
+
+**Alpha 0.1**
+- Initial release
+
+
 
 ## Author/s
 Jack Williams (HackoTron)
