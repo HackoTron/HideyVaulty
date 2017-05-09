@@ -7,7 +7,7 @@ HideyVaulty is an open-source file-hiding system for Windows. It is designed for
 - A working Windows system
 - Visual Studio 2015 or later (if you want to compile the code manually)
 - The HideyVaulty EXE file (32-bit and 64-bit versions available below)
-  - **Beta 0.6**
+  - **Beta 0.6.1**
      - [HideyVaulty 0.6.1 x86](https://github.com/HackoTron/HideyVaulty/releases/download/v0.6-beta/HideyVaulty-0.6.1-x86.exe)
      - [HideyVaulty 0.6.1 x86_64](https://github.com/HackoTron/HideyVaulty/releases/download/v0.6-beta/HideyVaulty-0.6.1-x86_64.exe)
 
