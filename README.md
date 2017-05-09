@@ -1,7 +1,5 @@
 # HideyVaulty
-HideyVaulty is an open-source login system for Windows. It is currently in early alpha, but eventually, you will be able to use it
-to lock programs away from prying eyes. It can currently save credentials, but they are not encrypted, and in the location where the .exe
-file is located. Eventually, I will create a CMD based installer, to get everything in the right place.
+HideyVaulty is an open-source file-hiding system for Windows. It is designed for penetration testers and hackers with reverse-shell access to a Windows system, and includes the ability to lock programs away from prying eyes (to be implemented). It can currently save plain-text credentials, stored in the easily accessible "resources" folder (to be fixed).
 
 ## Prerequisites
 **You will need:**
@@ -10,9 +8,27 @@ file is located. Eventually, I will create a CMD based installer, to get everyth
 - Visual Studio 2015 or later (if you want to compile the code manually)
 
 ## Getting started
-Since I haven't yet created an installer, I will leave this section blank.
+When HideyVaulty runs for the first time, a basic setup program will run. The program will ask/force you to create an account, 
+and create the neccessary files and folders. For more information on HideyVaulty commands and their syntax, type `help` into the
+HideyVaulty Shell.
 
 ## Changelog
+**Coming soon**
+- Built-in keylogger
+- Task manager and MSCONFIG blocking
+- WAY better setup
+- Stealth modes
+- Hidden folders (finally!)
+- Lots more!
+
+**Beta 0.6**
+- Basic configuration upon first startup
+- Disclaimer in "HideyVaulty.cpp"
+- "dir" command implemented
+- Blank password blocking
+- More efficient "quit" function
+- A few minor fixes
+
 **Alpha 0.5**
 - Redesigned code structure
 - Better authentication system
@@ -32,7 +48,7 @@ Since I haven't yet created an installer, I will leave this section blank.
 - Minor tweaks
 
 **Alpha 0.1**
-- Initial release
+- Initial alpha build
 
 
 
