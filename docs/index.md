@@ -12,6 +12,11 @@ When HideyVaulty runs for the first time, a basic setup program will run. The pr
 and create the neccessary files and folders. For more information on HideyVaulty commands and their syntax, type `help` into the
 HideyVaulty Shell.
 
+## Downloads
+** Beta 0.6 **
+[HideyVaulty 0.6 x86](https://github.com/HackoTron/HideyVaulty/releases/download/v0.6-beta/HideyVaulty-0.6-x86.exe)
+[HideyVaulty 0.6 x86_64](https://github.com/HackoTron/HideyVaulty/releases/download/v0.6-beta/HideyVaulty-0.6-x86_64.exe)
+
 ## Changelog
 **Coming soon**
 - Built-in keylogger
