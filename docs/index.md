@@ -25,7 +25,7 @@ HideyVaulty Shell.
 - Hidden folders (finally!)
 - Lots more!
 
-**Beta 0.6**
+**Beta 0.6.1**
 - Basic configuration upon first startup
 - Disclaimer in "HideyVaulty.cpp"
 - "dir" command implemented
