@@ -1,6 +1,7 @@
 theme: jekyll-theme-slate
+owner_name: "HackoTron"
 description: Welcome to HackoTron's HideyVaulty webpage!
 releases_url: https://github.com/HackoTron/HideyVaulty/releases
-releases: https://github.com/HackoTron/HideyVaulty/releases/download/v0.6-beta/
+issues_url: https://github.com/HackoTron/HideyVaulty/issues
 show_downloads: true
 
