@@ -14,8 +14,8 @@ HideyVaulty Shell.
 
 ## Downloads
 **Beta 0.6**
-[HideyVaulty 0.6 x86](https://github.com/HackoTron/HideyVaulty/releases/download/v0.6-beta/HideyVaulty-0.6-x86.exe)\n
-[HideyVaulty 0.6 x86_64](https://github.com/HackoTron/HideyVaulty/releases/download/v0.6-beta/HideyVaulty-0.6-x86_64.exe)
+- [HideyVaulty 0.6 x86](https://github.com/HackoTron/HideyVaulty/releases/download/v0.6-beta/HideyVaulty-0.6-x86.exe)
+- [HideyVaulty 0.6 x86_64](https://github.com/HackoTron/HideyVaulty/releases/download/v0.6-beta/HideyVaulty-0.6-x86_64.exe)
 
 ## Changelog
 **Coming soon**
