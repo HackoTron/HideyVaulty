@@ -17,7 +17,8 @@ std::string userInput;
 
 int main() {
 	system("cls");
-	system("title = HideyVaulty - Beta 0.6");
+	system("title HideyVaulty - Beta 0.7");
+	system("mode con: lines=40 cols=108");
 
 	shellMain->showSplash();
 	shellMain->setup();
@@ -29,7 +30,8 @@ int mainAuth() {
 	ShellAuth *shellMainAuth = new ShellAuth();
 
 	system("cls");
-	system("title = HideyVaulty - Beta 0.6");
+	system("title HideyVaulty - Beta 0.7");
+
 
 	shellMainAuth->showSplash();
 	shellMainAuth->showPromptAuth();

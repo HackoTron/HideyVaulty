@@ -18,8 +18,7 @@ void Shell::setup() {
 			system("mkdir resources, files");
 			std::cout << "Creating directories ... \n"
 				"Done." << std::endl;
-			std::cout << '\n';
-			shell->showPrompt();
+			shell->createAccount();
 		}
 		else if (userInput == "N" || userInput == "n") {
 			std::cout << std::endl;
@@ -91,7 +90,7 @@ void Shell::commandValidityChecker(std::string userInput) {
 		commandValidityChecker(userInput);
 	}
 	else if (userInput == "account --login") {
-		shell->accountLogin();
+		shell->loginInit();
 		commandValidityChecker(userInput);
 	}
 	else {
@@ -112,7 +111,7 @@ void Shell::createAccount() {
 		std::cout << "You must enter a username!\n" << std::endl;
 		shell->createAccount();
 	}
-	credentialFileWrite << userInput << std::endl;
+	credentialFileWrite << "username: " << userInput << std::endl;
 
 	while (true) {
 		std::cout << "What would you like your password to be? > " << std::flush;
@@ -124,7 +123,7 @@ void Shell::createAccount() {
 			break;
 		}
 	}
-	credentialFileWrite << userInput;
+	credentialFileWrite << "password: " << userInput;
 
 	credentialFileWrite.close();
 
@@ -136,61 +135,68 @@ void Shell::createAccount() {
 }
 
 // System for initializing the account login process
-void Shell::loginInit() {
-	int dirOutput = system(" dir resources | findstr credentials.txt >nul");
+bool Shell::accountExists() {
+	int dirOutput = system("dir resources | findstr credentials.txt >nul");
 	if (dirOutput == 0) {
-		shell->usernameSystem();
+		return true;
 	}
-	std::cout << "You have not created an account. Type \"account --create\" to fix this.\n" << std::endl;
-	shell->showPrompt();
+	
+	return false;
 }
 
 // System for checking if username is correct
-void Shell::usernameSystem() {
-	std::string inputUsername;
+void Shell::loginSystem() {
+	credentialFileRead.open("resources/credentials.txt");
 
-	do {
-		std::cout << "Enter your username > " << std::flush;
-		getline(std::cin, inputUsername);
 
-		credentialFileRead.open("resources/credentials.txt");
-		credentialFileRead >> user;
+	if (!credentialFileRead.is_open()) {
+		return;
+	}
 
-		if (inputUsername == user) {
-			credentialFileRead.close();
-			break;
+	for (int i = 1; i <= 2; i++) {
+		if (i == 1)
+			std::cout << "Enter your username > " << std::flush;
+		else if (i == 2)
+			std::cout << "Enter your password > " << std::flush;
+
+		while (credentialFileRead) {
+			std::string line;
+			getline(credentialFileRead, line, ':');
+
+			getline(std::cin, userInput);
+
+			credentialFileRead >> currentDetail;
+
+			if (i == 1) {
+				while (true) {
+					if (userInput != currentDetail) {
+						std::cout << "Enter a valid username > " << std::flush;
+						getline(std::cin, userInput);
+					}
+					else if (userInput == currentDetail) {
+						credentialFileRead.close();
+						break;
+					}
+				}
+				break;
+			}
+
+			else if (i == 2) {
+				while (true) {
+					if (userInput != currentDetail) {
+						std::cout << "Enter a valid password > " << std::flush;
+						getline(std::cin, userInput);
+					}
+					else if (userInput == currentDetail) {
+						credentialFileRead.close();
+						break;
+					}
+				}
+				break;
+			}
 		}
-		else {
-			std::cout << "Enter a valid username > " << std::endl;
-		}
-	} while (true);
 
-	shell->passwordSystem();
-}
-
-// System for checking if password is correct
-void Shell::passwordSystem() {
-	std::string inputPassword;
-	std::string line;
-
-	do {
-
-		std::cout << "Enter your password > " << std::flush;
-		getline(std::cin, inputPassword);
-
-		credentialFileRead.open("resources/credentials.txt");
-		credentialFileRead.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-		getline(credentialFileRead, pass);
-
-		if (inputPassword == pass) {
-			credentialFileRead.close();
-			delete shell;
-			break;
-		}
-		else {
-			std::cout << "Password incorrect" << std::endl;
-		}
-	} while (true);
+	}
 
 	authenticated = true;
 
@@ -204,9 +210,15 @@ void Shell::authenticationChecker() {
 	}
 }
 
-// Account login system
-void Shell::accountLogin() {
-	shell->loginInit();
+// Initializes login system
+void Shell::loginInit() {
+	if (shell->accountExists()) {
+		loginSystem();
+	}
+	else {
+		std::cout << "You have not created an account. Type \"account --create\" to fix this.\n" << std::endl;
+		shell->showPrompt();
+	}
 	commandValidityChecker(userInput);
 }
 

