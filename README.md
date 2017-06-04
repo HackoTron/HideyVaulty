@@ -42,7 +42,7 @@ HideyVaulty Shell.
 - 32-bit version!
 
 **Alpha 0.4**
-- "EpicLogin" renamed to "HideyVault"
+- "EpicLogin" renamed to "HideyVaulty"
 - Totally redesigned CLI
 - Cool ASCII art
 - Heaps of bug fixes and performance improvements
