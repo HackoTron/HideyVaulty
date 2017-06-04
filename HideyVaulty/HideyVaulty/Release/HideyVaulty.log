@@ -1,8 +1,6 @@
-﻿  stdafx.cpp
-  HideyVaulty.cpp
-  HideyVaultyShell.cpp
-  HideyVaultyShellAuth.cpp
-HideyVaultyShellAuth.cpp(196): error C2664: 'HANDLE CreateFileW(LPCWSTR,DWORD,DWORD,LPSECURITY_ATTRIBUTES,DWORD,DWORD,HANDLE)': cannot convert argument 1 from 'const char [19]' to 'LPCWSTR'
-  HideyVaultyShellAuth.cpp(196): note: Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
-  Logger.cpp
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.14393.0\um\winnt.h(154): fatal error C1189: #error:  "No Target Architecture"
+﻿  Generating code
+  0 of 511 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  HideyVaulty.vcxproj -> C:\Users\JackEliteBook\Documents\GitHub\HideyVaulty\HideyVaulty\Release\HideyVaulty.exe

@@ -1,9 +1,13 @@
 ﻿  HideyVaulty.cpp
   HideyVaultyShell.cpp
   HideyVaultyShellAuth.cpp
+  Logger.cpp
+Logger.cpp(8): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.14393.0\ucrt\stdio.h(207): note: see declaration of 'fopen'
+Logger.cpp(41): warning C4477: 'fprintf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'int *'
   Generating code
-  11 of 511 functions ( 2.2%) were compiled, the rest were copied from previous compilation.
+  2 of 511 functions ( 0.4%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    12 functions had inline decision re-evaluated but remain unchanged
+    0 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   HideyVaulty.vcxproj -> C:\Users\JackEliteBook\Documents\GitHub\HideyVaulty\HideyVaulty\x64\Release\HideyVaulty.exe

