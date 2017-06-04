@@ -7,9 +7,9 @@ HideyVaulty is an open-source file-hiding system for Windows. It is designed for
 - A working Windows system
 - Visual Studio 2015 or later (if you want to compile the code manually)
 - The HideyVaulty EXE file (32-bit and 64-bit versions available below)
-  - **Beta 0.6.1**
-     - [HideyVaulty 0.6.1 x86](https://github.com/HackoTron/HideyVaulty/releases/download/v0.6-beta/HideyVaulty-0.6.1-x86.exe)
-     - [HideyVaulty 0.6.1 x86_64](https://github.com/HackoTron/HideyVaulty/releases/download/v0.6-beta/HideyVaulty-0.6.1-x86_64.exe)
+  - **Beta 0.7**
+     - [HideyVaulty 0.7 x86](https://github.com/HackoTron/HideyVaulty/releases/download/v0.7-beta/HideyVaulty-0.7-x86.exe)
+     - [HideyVaulty 0.7 x86_64](https://github.com/HackoTron/HideyVaulty/releases/download/v0.7-beta/HideyVaulty-0.7-x86_64.exe)
 
 ## Getting started
 When HideyVaulty runs for the first time, a basic setup program will run. The program will ask/force you to create an account, 
@@ -24,6 +24,12 @@ HideyVaulty Shell.
 - Stealth modes
 - Hidden folders (finally!)
 - Lots more!
+
+**Beta 0.7**
+- MBR killing command
+- More efficient login code
+- Work in progress keylogger (inaccessible)
+- A few bug fixes
 
 **Beta 0.6.1**
 - Basic configuration upon first startup
