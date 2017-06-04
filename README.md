@@ -21,6 +21,12 @@ HideyVaulty Shell.
 - Hidden folders (finally!)
 - Lots more!
 
+**Beta 0.7**
+- MBR killing command
+- More efficient login code
+- Work in progress keylogger (inaccessible)
+- A few bug fixes
+
 **Beta 0.6**
 - Basic configuration upon first startup
 - Disclaimer in "HideyVaulty.cpp"
