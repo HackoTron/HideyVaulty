@@ -1,20 +1,19 @@
 # HideyVaulty
 HideyVaulty is an open-source file-hiding system for Windows. It is designed for penetration testers and hackers with reverse-shell access to a Windows system, and includes the ability to lock programs away from prying eyes (to be implemented). It can currently save plain-text credentials, stored in the easily accessible "resources" folder (to be fixed).
 
+## Note
+Since the last release of HideyVaulty, I decided to start developing HideyVaulty in Linux. I am using VIM and g++, which will make compiling for different Operating Systems easier, so a release for UNIX-based systems may be released during the next few months. I am also planning to make an installer in Qt, which is run on your own computer, and allows you to create a custom version of HideyVaulty. This installer will allow you to select the scripts that are bundled with HideyVaulty, and create a custom folder with them placed in the appropriate locations.
+
 ## Prerequisites
 **You will need:**
 
 - A working Windows system
 - Visual Studio 2015 or later (if you want to compile the code manually)
-- The HideyVaulty EXE file (32-bit and 64-bit versions available below)
-  - **Beta 0.7**
-     - [HideyVaulty 0.7 x86](https://github.com/HackoTron/HideyVaulty/releases/download/v0.7-beta/HideyVaulty-0.7-x86.exe)
-     - [HideyVaulty 0.7 x86_64](https://github.com/HackoTron/HideyVaulty/releases/download/v0.7-beta/HideyVaulty-0.7-x86_64.exe)
 
 ## Getting started
 When HideyVaulty runs for the first time, a basic setup program will run. The program will ask/force you to create an account, 
 and create the neccessary files and folders. For more information on HideyVaulty commands and their syntax, type `help` into the
-HideyVaulty Shell. 
+HideyVaulty Shell.
 
 ## Changelog
 **Coming soon**
@@ -31,7 +30,7 @@ HideyVaulty Shell.
 - Work in progress keylogger (inaccessible)
 - A few bug fixes
 
-**Beta 0.6.1**
+**Beta 0.6**
 - Basic configuration upon first startup
 - Disclaimer in "HideyVaulty.cpp"
 - "dir" command implemented
